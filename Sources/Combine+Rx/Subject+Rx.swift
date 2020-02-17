@@ -15,6 +15,7 @@ import RxRelay
 ///
 /// - note: This only works when the underlying Failure is Swift.Error,
 ///         since RxSwift has no typed errors.
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
 public protocol AnyObserverConvertible: Combine.Subject where Failure == Swift.Error {
     associatedtype Output
 
@@ -24,6 +25,7 @@ public protocol AnyObserverConvertible: Combine.Subject where Failure == Swift.E
     func asAnyObserver() -> AnyObserver<Output>
 }
 
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
 public extension AnyObserverConvertible {
     /// Returns a RxSwift AnyObserver wrapping the Subject
     ///
@@ -43,9 +45,13 @@ public extension AnyObserverConvertible {
     }
 }
 
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
 extension PassthroughSubject: AnyObserverConvertible where Failure == Swift.Error {}
+
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
 extension CurrentValueSubject: AnyObserverConvertible where Failure == Swift.Error {}
 
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
 public extension ObservableType {
     /**
      Creates new subscription and sends elements to a Combine Subject.

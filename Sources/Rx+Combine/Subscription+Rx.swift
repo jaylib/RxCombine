@@ -11,6 +11,7 @@ import RxSwift
 
 /// A Combine Subscription wrapping a RxSwift Disposable.
 /// Upon cancellation, the underlying Disposable is disposed of.
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
 class RxSubscription: Subscription {
     private let disposable: Disposable
 

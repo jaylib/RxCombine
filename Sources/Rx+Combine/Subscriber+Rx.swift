@@ -9,6 +9,7 @@
 import Combine
 import RxSwift
 
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
 extension Subscriber where Failure == Never {
     /// Push a provided RxSwift.event onto the Combine Subscriber.
     ///
@@ -25,6 +26,7 @@ extension Subscriber where Failure == Never {
     }
 }
 
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, watchOS 6.0, *)
 extension Subscriber where Failure == Swift.Error {
     /// Push a provided RxSwift.event onto the Combine Subscriber.
     ///
